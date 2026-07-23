@@ -51,6 +51,19 @@ fi
 # Add luci-app-amlogic
 rm -rf package/luci-app-amlogic
 git clone -b main https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
+# 移除 ImmortalWrt 源码中自带的旧版 OpenClash
+# 官方 feed 中的版本往往更新不及时，会导致版本撕裂报错
+rm -rf feeds/luci/applications/luci-app-openclash
+# 强制删除 Rust 包目录
+rm -rf feeds/packages/lang/rust
+# 添加 OpenClash 官方源
+git clone --depth=1 -b master https://github.com/vernesong/OpenClash.git package/luci-app-openclash
+# 修正权限
+# 确保脚本在编译前有正确的执行权限
+chmod -R 755 package/luci-app-openclash
+
+git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
+git clone https://github.com/sirpdboy/luci-app-advancedplus.git package/luci-app-advancedplus
 #
 # Apply patch
 # git apply ../config/patches/{0001*,0002*}.patch --directory=feeds/luci
