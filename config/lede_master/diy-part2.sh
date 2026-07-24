@@ -64,6 +64,7 @@ chmod -R 755 package/luci-app-openclash
 
 git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
 git clone https://github.com/sirpdboy/luci-app-advancedplus.git package/luci-app-advancedplus
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 #
 # Apply patch
 # git apply ../config/patches/{0001*,0002*}.patch --directory=feeds/luci
