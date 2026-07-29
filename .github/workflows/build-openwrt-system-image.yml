@@ -482,7 +482,7 @@ jobs:
           api_url="https://api.github.com/repos/${repo_path}/git/ref/heads/${{ env.REPO_BRANCH }}"
           source_hash=$(curl -fsSL -m 20 \
               -H "Accept: application/vnd.github+json" \
-              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" \
               ${api_url} |
               jq -r '.object.sha'
           )
@@ -537,7 +537,7 @@ jobs:
           remove_artifacts: false
           replaces_artifacts: true
           make_latest: true
-          gh_token: ${{ secrets.GITHUB_TOKEN }}
+          gh_token: ${{ secrets.GH_TOKEN }}
 
       - name: Package OpenWrt for target boards
         if: ${{ steps.clean.outputs.status == 'success' && !cancelled() }}
@@ -562,7 +562,7 @@ jobs:
           remove_artifacts: false
           replaces_artifacts: true
           make_latest: true
-          gh_token: ${{ secrets.GITHUB_TOKEN }}
+          gh_token: ${{ secrets.GH_TOKEN }}
           body: |
             ### OpenWrt Image Information
             - Default IP: `192.168.1.1`
