@@ -173,7 +173,7 @@ jobs:
           api_url="https://api.github.com/repos/${{ inputs.kernel_source }}/linux-${{ matrix.kernel_version }}/git/ref/heads/main"
           source_hash=$(curl -fsSL -m 20 \
               -H "Accept: application/vnd.github+json" \
-              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" \
               ${api_url} |
               jq -r '.object.sha'
           )
@@ -215,7 +215,7 @@ jobs:
           remove_artifacts: false
           replaces_artifacts: true
           make_latest: false
-          gh_token: ${{ secrets.GITHUB_TOKEN }}
+          gh_token: ${{ secrets.GH_TOKEN }}
           body: |
             - These are Mainline LTS(Long Term Support) kernels that provide `stable` support for Armbian and OpenWrt.
             - It works with most `Amlogic`, `Rockchip`, and `Allwinner` devices. For specific details, please refer to the instructions on the homepage of repository.
