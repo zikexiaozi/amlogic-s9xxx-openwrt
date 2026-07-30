@@ -48,6 +48,15 @@ fi
 
 # ------------------------------- Other started -------------------------------
 #
+# 在线用户
+git_sparse_clone main https://github.com/haiibo/packages luci-app-onliner
+sed -i '$i uci set nlbwmon.@nlbwmon[0].refresh_interval=2s' package/lean/default-settings/files/zzz-default-settings
+sed -i '$i uci commit nlbwmon' package/lean/default-settings/files/zzz-default-settings
+chmod 755 package/luci-app-onliner/root/usr/share/onliner/setnlbw.sh
+# samba解除root限制
+sed -i 's/invalid users = root/#&/g' feeds/packages/net/samba4/files/smb.conf.template
+# 修改本地时间格式
+sed -i 's/os.date()/os.date("%a %Y-%m-%d %H:%M:%S")/g' package/lean/autocore/files/*/index.htm
 # Add luci-app-amlogic
 rm -rf package/luci-app-amlogic
 git clone -b main https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
@@ -68,6 +77,8 @@ git clone -b main https://github.com/ophub/luci-app-amlogic.git package/luci-app
 
 git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
 git clone https://github.com/sirpdboy/luci-app-advancedplus.git package/luci-app-advancedplus
+# 定时限速插件
+git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
 #
 # Apply patch
 # git apply ../config/patches/{0001*,0002*}.patch --directory=feeds/luci
