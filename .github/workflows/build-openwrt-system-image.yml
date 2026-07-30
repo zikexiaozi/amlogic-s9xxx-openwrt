@@ -310,7 +310,7 @@ jobs:
           remove_artifacts: false
           replaces_artifacts: true
           make_latest: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Package OpenWrt for target boards
         if: ${{ steps.clean.outputs.status == 'success' && !cancelled() }}
@@ -336,7 +336,7 @@ jobs:
           remove_artifacts: false
           replaces_artifacts: true
           make_latest: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             ### OpenWrt Image Information
             - Default IP: `192.168.1.1`
