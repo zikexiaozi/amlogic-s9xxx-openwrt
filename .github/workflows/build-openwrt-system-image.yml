@@ -551,6 +551,7 @@ jobs:
           kernel_repo: ${{ inputs.kernel_repo }}
           kernel_usage: ${{ inputs.kernel_usage }}
           builder_name: ${{ inputs.builder_name }}
+          openwrt_size: 1024/4096
 
       - name: Upload packaged OpenWrt to Release
         uses: ophub/upload-to-releases@main
