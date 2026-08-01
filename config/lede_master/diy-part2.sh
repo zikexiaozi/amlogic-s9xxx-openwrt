@@ -66,6 +66,10 @@ git clone -b main https://github.com/ophub/luci-app-amlogic.git package/luci-app
 # rm -rf package/luci-theme-argon
 # git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 
+# kenzok8/small-package添加仓库
+rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
+sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+
 # 移除 ImmortalWrt 源码中自带的旧版 OpenClash
 # 官方 feed 中的版本往往更新不及时，会导致版本撕裂报错
 rm -rf feeds/luci/applications/luci-app-openclash
