@@ -58,31 +58,25 @@ sed -i 's/os.date()/os.date("%a %Y-%m-%d %H:%M:%S")/g' package/lean/autocore/fil
 # Add luci-app-amlogic
 rm -rf package/luci-app-amlogic
 git clone -b main https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
-
+#
 # rm -rf package/luci-theme-argon
 # git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-
+#
 # kenzok8/small-package添加仓库
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
-
+#
 # 移除 ImmortalWrt 源码中自带的旧版 OpenClash
 # 官方 feed 中的版本往往更新不及时，会导致版本撕裂报错
 rm -rf feeds/luci/applications/luci-app-openclash
-# 强制删除 Rust 包目录
-rm -rf feeds/packages/lang/rust
 # 添加 OpenClash 官方源
 git clone --depth=1 -b master https://github.com/vernesong/OpenClash.git package/luci-app-openclash
-# 修正权限
-# 确保脚本在编译前有正确的执行权限
-chmod -R 755 package/luci-app-openclash
-
+#
 git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
 git clone https://github.com/sirpdboy/luci-app-advancedplus.git package/luci-app-advancedplus
 # 定时限速插件
 git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
 #
-
 # Modify NTP Server
 sed -i "s/0.openwrt.pool.ntp.org/ntp.aliyun.com/g" package/base-files/files/bin/config_generate
 sed -i "s/1.openwrt.pool.ntp.org/cn.ntp.org.cn/g" package/base-files/files/bin/config_generate
