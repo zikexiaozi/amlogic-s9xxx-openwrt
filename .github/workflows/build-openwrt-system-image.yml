@@ -22,7 +22,7 @@ on:
       openwrt_board:
         description: "Select device board"
         required: false
-        default: "all"
+        default: "bdy-g18-pro"
         type: choice
         options:
           - all
