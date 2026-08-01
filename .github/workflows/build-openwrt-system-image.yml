@@ -27,7 +27,6 @@ on:
         options:
           - all
           - bdy-g18-pro
-          - nsy-g16-plus_nsy-g68-plus_bdy-g18-pro
       auto_kernel:
         description: "Auto use the latest kernel"
         required: false
@@ -69,13 +68,12 @@ on:
       builder_name:
         description: "Set OpenWrt builder signature."
         required: false
-        default: "ophub"
+        default: "ZhouDJ"
         type: choice
         options:
+          - ZhouDJ
           - ophub
           - angel
-          - ZhouDJ
-
 env:
   TZ: Etc/UTC
   CCACHE_DIR: /builder/openwrt/.ccache
