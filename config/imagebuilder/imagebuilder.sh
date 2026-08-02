@@ -218,6 +218,10 @@ rebuild_firmware() {
         luci-proto-ncm luci-proto-openconnect luci-proto-ppp luci-proto-qmi luci-proto-relay \
         \
         luci-app-amlogic luci-i18n-amlogic-zh-cn \
+        kmod-mt7615-common kmod-mt7615-firmware kmod-mt7615e kmod-ath kmod-ath10k kmod-ipt-physdev kmod-nf-ipvs kmod-ipt-filter kmod-nfnetlink \
+        kmod-nft-fullcone kmod-fs-btrfs kmod-fs-overlay kmod-fs-ext4 kmod-br-netfilter kmod-crypto-hash kmod-veth kmod-macvlan kmod-nf-conntrack \
+        kmod-nf-conntrack-netlink kmod-nf-conntrack6 kmod-nf-nat kmod-nf-ipt kmod-nf-ipt6 kmod-ipt-conntrack kmod-ipt-conntrack-extra \
+        kmod-ipt-conntrack-label kmod-ipt-nat kmod-ipt-nat6 kmod-ipt-extra kmod-ipt-core kmod-ipt-ipset kmod-ipt-offload kmod-nf-flow kmod-tun \
         \
         ${config_list} \
         "
