@@ -215,14 +215,12 @@ rebuild_firmware() {
         luci luci-base luci-compat luci-i18n-base-zh-cn luci-lib-base \
         luci-lib-ip luci-lib-ipkg luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-mod-network \
         luci-mod-status luci-mod-system luci-proto-3g luci-proto-ipip luci-proto-ipv6 \
-        luci-proto-ncm luci-proto-openconnect luci-proto-ppp luci-proto-qmi luci-proto-relay \
-        \
-        luci-app-amlogic luci-i18n-amlogic-zh-cn \
+        luci-proto-ncm luci-proto-openconnect luci-proto-ppp luci-proto-qmi luci-proto-relay luci-app-amlogic luci-i18n-amlogic-zh-cn \
         kmod-mt7615-common kmod-mt7615-firmware kmod-mt7615e kmod-ath kmod-ath10k kmod-ipt-physdev kmod-nf-ipvs kmod-ipt-filter kmod-nfnetlink \
         kmod-fs-btrfs kmod-fs-ext4 kmod-br-netfilter kmod-crypto-hash kmod-veth kmod-macvlan kmod-nf-conntrack kmod-mt7601u kmod-mt76-usb \
         kmod-nf-conntrack-netlink kmod-nf-conntrack6 kmod-nf-nat kmod-nf-ipt kmod-nf-ipt6 kmod-ipt-conntrack kmod-ipt-conntrack-extra \
         kmod-ipt-conntrack-label kmod-ipt-nat kmod-ipt-nat6 kmod-ipt-extra kmod-ipt-core kmod-ipt-ipset kmod-ipt-offload kmod-nf-flow kmod-tun \
-        kmod-mt76 kmod-mt76-connac kmod-mt76-core kmod-mt7603 MAC80211_DEBUGFS MAC80211_MESH kmod-rtlwifi kmod-rtlwifi-btcoexist kmod-rtlwifi-pci kmod-rtlwifi-usb \
+        kmod-mt76 kmod-mt76-connac kmod-mt76-core kmod-mt7603 kmod-rtlwifi kmod-rtlwifi-btcoexist kmod-rtlwifi-pci kmod-rtlwifi-usb \
         \
         ${config_list} \
         "
