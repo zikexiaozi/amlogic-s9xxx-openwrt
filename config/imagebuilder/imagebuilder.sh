@@ -220,7 +220,8 @@ rebuild_firmware() {
         kmod-fs-btrfs kmod-fs-ext4 kmod-br-netfilter kmod-crypto-hash kmod-veth kmod-macvlan kmod-nf-conntrack kmod-mt7601u kmod-mt76-usb \
         kmod-nf-conntrack-netlink kmod-nf-conntrack6 kmod-nf-nat kmod-nf-ipt kmod-nf-ipt6 kmod-ipt-conntrack kmod-ipt-conntrack-extra \
         kmod-ipt-conntrack-label kmod-ipt-nat kmod-ipt-nat6 kmod-ipt-extra kmod-ipt-core kmod-ipt-ipset kmod-ipt-offload kmod-nf-flow kmod-tun \
-        kmod-mt76 kmod-mt76-connac kmod-mt76-core kmod-mt7603 kmod-rtlwifi kmod-rtlwifi-btcoexist kmod-rtlwifi-pci kmod-rtlwifi-usb \
+        kmod-mt76 kmod-mt76-connac kmod-mt76-core kmod-mt7603 kmod-rtlwifi kmod-rtlwifi-btcoexist kmod-rtlwifi-pci kmod-rtlwifi-usb kmod-iwlwifi \
+        kmod-rtlwifi-btcoexist kmod-rtlwifi-pci kmod-mwifiex-pcie kmod-mwifiex-sdio 
         \
         ${config_list} \
         "
