@@ -60,7 +60,6 @@ sed -i 's/invalid users = root/#&/g' feeds/packages/net/samba4/files/smb.conf.te
 sed -i 's/os.date()/os.date("%a %Y-%m-%d %H:%M:%S")/g' package/lean/autocore/files/*/index.htm
 #
 # kenzok8/small-package添加仓库
-rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
 #
 # 移除 ImmortalWrt 源码中自带的旧版 OpenClash
