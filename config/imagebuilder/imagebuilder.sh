@@ -133,19 +133,6 @@ custom_packages() {
         curl -fsSOJL "${plugin_url}"
         [[ "${?}" -eq "0" ]] && echo -e "${INFO} The [ ${plugin_url} ] is downloaded successfully."
     done
-    
-    # Download luci-app-amlogic
-    amlogic_api="https://api.github.com/repos/jerrykuku/luci-theme-argon/releases"
-    # Get the latest release version
-    amlogic_plugin_latest_version="$(curl -s ${amlogic_api} | grep -oP '(?<="tag_name": ")[^"]+' | grep "\-js$" | sort -Vur | head -n1)"
-    # Get the download URLs for the latest release assets (ipk or apk files)
-    amlogic_plugin_list=($(curl -s ${amlogic_api} | grep "browser_download_url" | grep -oE "https.*/${amlogic_plugin_latest_version}/.*\.(ipk|apk)"))
-
-    # Download the latest release assets
-    for plugin_url in "${amlogic_plugin_list[@]}"; do
-        curl -fsSOJL "${plugin_url}"
-        [[ "${?}" -eq "0" ]] && echo -e "${INFO} The [ ${plugin_url} ] is downloaded successfully."
-    done
 
     # Download other luci-app-xxx
     # ......
