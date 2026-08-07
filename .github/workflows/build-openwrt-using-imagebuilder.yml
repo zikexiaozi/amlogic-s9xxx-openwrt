@@ -15,7 +15,7 @@ on:
       releases_branch:
         description: "Select the releases branch"
         required: false
-        default: "openwrt:25.12.5"
+        default: "immortalwrt:24.10.6"
         type: choice
         options:
           - openwrt:25.12.5
@@ -26,7 +26,7 @@ on:
       openwrt_board:
         description: "Select device board"
         required: false
-        default: "all"
+        default: "bdy-g18-pro"
         type: choice
         options:
           - all
